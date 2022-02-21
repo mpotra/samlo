@@ -14,12 +14,15 @@ defmodule Samlo.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger, :crypto]
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
-    []
+    [
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.1", only: [:dev, :test], runtime: false}
+    ]
   end
 end
