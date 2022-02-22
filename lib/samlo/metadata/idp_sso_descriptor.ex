@@ -1,9 +1,9 @@
-defmodule Samlo.EntityDescriptor.IdpSsoDescriptor do
+defmodule Samlo.Metadata.IdpSsoDescriptor do
   @moduledoc """
   The IDPSSODescriptor structure
   """
 
-  alias Samlo.EntityDescriptor.RoleDescriptor
+  alias Samlo.Metadata.RoleDescriptor
 
   defstruct metadata: nil,
             authn_req_signed: false

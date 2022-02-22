@@ -1,4 +1,4 @@
-defmodule Samlo.EntityDescriptor.Certificate do
+defmodule Samlo.Metadata.Certificate do
   @moduledoc """
   Structure that contains the X509Certificate data
   """

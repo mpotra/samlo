@@ -1,22 +1,18 @@
-defmodule Samlo.EntityDescriptor.Endpoint do
+defmodule Samlo.Metadata.Endpoint do
   @moduledoc """
   The Endpoint structure holds the common attributes of a Service
   """
 
   defstruct binding: nil,
             location: "",
-            response_location: "",
-            index: nil,
-            default: nil
+            response_location: ""
 
-  @type binding() :: :post | :redirect
+  @type binding() :: :post | :redirect | :idp_discovery_protocol
   @type location() :: String.t()
   @type t() :: %__MODULE__{
           binding: nil | binding(),
           location: location(),
-          response_location: location(),
-          index: nil | pos_integer(),
-          default: nil | boolean()
+          response_location: nil | location()
         }
 
   @spec decode_binding(binding :: String.t()) :: nil | binding()
@@ -26,6 +22,10 @@ defmodule Samlo.EntityDescriptor.Endpoint do
 
   def decode_binding("urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST") do
     :post
+  end
+
+  def decode_binding("urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol") do
+    :idp_discovery_protocol
   end
 
   def decode_binding(_) do
@@ -41,22 +41,11 @@ defmodule Samlo.EntityDescriptor.Endpoint do
     "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
   end
 
+  def encode_binding(:idp_discovery_protocol) do
+    "urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol"
+  end
+
   def encode_binding(_) do
     ""
-  end
-
-  @spec decode_default_value(default_value :: binary()) :: boolean()
-  def decode_default_value(str) when is_binary(str) do
-    str
-    |> String.downcase()
-    |> case do
-      "true" -> true
-      "false" -> false
-      _ -> nil
-    end
-  end
-
-  def decode_default_value(_) do
-    nil
   end
 end

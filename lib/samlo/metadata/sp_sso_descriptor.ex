@@ -1,9 +1,9 @@
-defmodule Samlo.EntityDescriptor.SpSsoDescriptor do
+defmodule Samlo.Metadata.SpSsoDescriptor do
   @moduledoc """
   The SPSSODescriptor structure
   """
 
-  alias Samlo.EntityDescriptor.RoleDescriptor
+  alias Samlo.Metadata.RoleDescriptor
 
   defstruct metadata: nil,
             authn_req_signed: false,

@@ -1,21 +1,24 @@
-defmodule Samlo.EntityDescriptor do
+defmodule Samlo.Metadata.EntityDescriptor do
   @moduledoc """
   The EntityDescriptor structure
   """
 
-  alias Samlo.Signature
+  alias Samlo.Xmlsig.Signature
+  alias Samlo.Assertion
 
-  alias Samlo.EntityDescriptor.{
-    Contact,
+  alias Samlo.Metadata.{
+    ContactPerson,
     IdpSsoDescriptor,
     Organization,
     RoleDescriptor,
-    SpSsoDescriptor
+    SpSsoDescriptor,
+    RequestedAttribute
   }
 
   defstruct entity_id: "",
             valid_until: nil,
             cache_duration: nil,
+            namespaces: [],
             signature: nil,
             extensions: [],
             roles: [],
@@ -23,22 +26,24 @@ defmodule Samlo.EntityDescriptor do
             contacts: []
 
   @type role() :: IdpSsoDescriptor.t() | SpSsoDescriptor.t()
-  @type extension() :: any()
+  @type attr_namespace() :: tuple()
   @type child() ::
-          Contact.t()
+          ContactPerson.t()
           | Organization.t()
-          | extension()
           | role()
           | RoleDescriptor.t()
           | RoleDescriptor.child()
+          | RequestedAttribute.t()
+          | Assertion.Attribute.t()
   @type t() :: %__MODULE__{
           entity_id: String.t(),
           valid_until: nil | DateTime.t(),
           cache_duration: nil | pos_integer(),
+          namespaces: list(attr_namespace()),
           signature: nil | Signature.t(),
-          extensions: list(extension()),
+          extensions: list(),
           roles: list(role()),
           organization: nil | Organization.t(),
-          contacts: list(Contact.t())
+          contacts: list(ContactPerson.t())
         }
 end

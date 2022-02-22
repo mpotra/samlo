@@ -1,10 +1,10 @@
-defmodule Samlo.EntityDescriptor.RoleDescriptor do
+defmodule Samlo.Metadata.RoleDescriptor do
   @moduledoc """
   The abstract RoleDescriptor structure
   """
 
-  alias Samlo.Signature
-  alias Samlo.EntityDescriptor.{KeyDescriptor, Service}
+  alias Samlo.Xmlsig.Signature
+  alias Samlo.Metadata.{KeyDescriptor, Service}
 
   defstruct signature: nil,
             extensions: [],

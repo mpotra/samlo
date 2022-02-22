@@ -1,9 +1,9 @@
-defmodule Samlo.EntityDescriptor.Service.SingleLogout do
+defmodule Samlo.Metadata.Service.SingleLogout do
   @moduledoc """
   Struct that defines the SingleLogoutService endpoint
   """
 
-  alias Samlo.EntityDescriptor.Endpoint
+  alias Samlo.Metadata.Endpoint
 
   defstruct endpoint: nil
 

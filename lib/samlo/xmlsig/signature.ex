@@ -1,4 +1,4 @@
-defmodule Samlo.Signature do
+defmodule Samlo.Xmlsig.Signature do
   @moduledoc """
   The ds:Signature structure
   """

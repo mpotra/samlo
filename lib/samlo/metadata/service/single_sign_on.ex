@@ -1,9 +1,9 @@
-defmodule Samlo.EntityDescriptor.Service.SingleSignOn do
+defmodule Samlo.Metadata.Service.SingleSignOn do
   @moduledoc """
   Struct that defines the SingleSignOn endpoint
   """
 
-  alias Samlo.EntityDescriptor.Endpoint
+  alias Samlo.Metadata.Endpoint
 
   defstruct endpoint: nil
 

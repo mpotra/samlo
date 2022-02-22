@@ -1,9 +1,10 @@
-defmodule Samlo.EntitiesDescriptor do
+defmodule Samlo.Metadata.EntitiesDescriptor do
   @moduledoc """
   The EntitiesDescriptor structure
   """
 
-  alias Samlo.{EntityDescriptor, Signature}
+  alias Samlo.Metadata.EntityDescriptor
+  alias Samlo.Xmlsig.Signature
 
   defstruct signature: nil,
             entities: []

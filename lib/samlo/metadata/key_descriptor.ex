@@ -1,9 +1,9 @@
-defmodule Samlo.EntityDescriptor.KeyDescriptor do
+defmodule Samlo.Metadata.KeyDescriptor do
   @moduledoc """
   The KeyDescriptor structure
   """
 
-  alias Samlo.EntityDescriptor.Certificate
+  alias Samlo.Metadata.Certificate
 
   defstruct cert: nil,
             use: :sign
