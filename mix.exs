@@ -33,9 +33,9 @@ defmodule Samlo.MixProject do
   def package do
     [
       name: :samlo,
-      files: ~w(lib LICENSE mix.exs README.md),
+      files: ~w(lib LICENSE COPYRIGHT mix.exs README.md),
       maintainers: ["Mihai Potra"],
-      licenses: ["MIT"],
+      licenses: ["GPL-3.0-or-later"],
       links: %{"GitHub" => @source_url}
     ]
   end
