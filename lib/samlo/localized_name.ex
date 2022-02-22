@@ -12,4 +12,5 @@ defmodule Samlo.LocalizedName do
           lang: String.t(),
           value: value_type
         }
+  @type t() :: t(String.t())
 end
