@@ -22,3 +22,8 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 samlo-*.tar
 
+/.vscode/
+/.tool-versions
+
+# Ignore ElixirLS VS Code extensions
+/.elixir_ls/
