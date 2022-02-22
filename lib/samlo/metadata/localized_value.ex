@@ -1,5 +1,6 @@
 defmodule Samlo.Metadata.LocalizedValue do
-  @moduledoc false
+  @moduledoc """
+  """
 
   @type t() :: {lang :: String.t(), value :: String.t()}
 end
